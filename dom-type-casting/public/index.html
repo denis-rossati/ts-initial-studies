@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form experimentation</title>
+</head>
+<body>
+  <main>
+    <h1>Experimentação no console.log</h1>
+    <form>
+      <label>
+        Nome
+        <!-- Don't take the semantic seriously, it's for testing -->
+        <input type="text" class="nameInput" >
+      </label>
+      <label>
+        Age:
+        <input type="number" id="ageInput">
+      </label>
+      <label>
+        Genero
+        <select id="gender" >
+          <option>macho</option>
+          <option>femea</option>
+          <option>nao binario</option>
+          <option>Outro</option>
+        </select>
+      </label>
+      <label>
+        <textarea href="mensagem ao mundo" id="messageInput" ></textarea>
+      </label>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
