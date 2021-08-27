@@ -21,12 +21,13 @@ let removerUsuario = (
   // ...
 }
 
-// Para isso existem o aliases. É como se guardassemos as declarações dos tipos dentro de variáveis:
+// Para isso existem o aliases. É como se guardássemos as declarações dos tipos dentro de variáveis:
 
 type strOuNbr = string | number;
 
 type tipoObjUsuario = {
   nome: string,
+  // podemos usar um type dentro de outro type
   idade: strOuNbr,
   casaPropria: boolean,
 }
