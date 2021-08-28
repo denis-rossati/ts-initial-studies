@@ -2,22 +2,51 @@
 const form = document.querySelector('form') as HTMLFormElement;
 const nameInput = document.querySelector('.nameInput') as HTMLInputElement;
 const genderInput = document.querySelector('#gender') as HTMLSelectElement;
-const messageInput = document.querySelector('#messageInput') as HTMLTextAreaElement;
 const ageInput = document.querySelector('#ageInput') as HTMLInputElement;
+const messageInput = document.querySelector('#messageInput') as HTMLTextAreaElement;
+const messageMonitors = document.querySelector('div') as HTMLDivElement;
 
 type sendFormType = Event;
 
-const sendMessage = (evt: sendFormType): void => {
-  evt.preventDefault();
-  const { value: name } = nameInput;
-  const { value: gender } = genderInput;
-  const { value: message } = messageInput;
-  const { valueAsNumber: age } = ageInput;
-
-  console.log(
-    `${name}, a ${gender} that is ${age} years old, have sended this message to mars:`,
-    message
-  );
+type capsuleTypes = {
+  name: string,
+  gender: string,
+  age: number,
+  message: string,
 }
 
-form.addEventListener('submit', sendMessage);
+type capsuleInfoTypes = {
+  name: string,
+  gender: string,
+  age: string,
+  message: string,
+}
+
+
+const launchThroughTheSpace = (message: string) => {
+  const marsWillReceive = document.createElement('p');
+  marsWillReceive.textContent = message;
+  marsWillReceive.className = "terraqueousMessage";
+  messageMonitors.appendChild(marsWillReceive);
+  return "Mensagem enviada!!!!!";
+}
+
+
+const createMessage = (evt: sendFormType): string => {
+  evt.preventDefault();
+
+  console.log("May God's love be with you")
+
+  const { name, gender, age, message }: capsuleTypes = {
+    name: nameInput.value,
+    gender: genderInput.value,
+    age: ageInput.valueAsNumber,
+    message: messageInput.value,
+  }
+
+  const transmission: string =`${name}, um ${gender} que tem ${age} anos, enviou essa mensagem: "${message}"`;
+  
+  return launchThroughTheSpace(transmission);
+}
+
+form.addEventListener('submit', createMessage);
