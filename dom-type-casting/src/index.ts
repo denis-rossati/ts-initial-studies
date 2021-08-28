@@ -22,7 +22,6 @@ type capsuleInfoTypes = {
   message: string,
 }
 
-
 const launchThroughTheSpace = (message: string) => {
   const marsWillReceive = document.createElement('p');
   marsWillReceive.textContent = message;
@@ -30,7 +29,6 @@ const launchThroughTheSpace = (message: string) => {
   messageMonitors.appendChild(marsWillReceive);
   return "Mensagem enviada!!!!!";
 }
-
 
 const createMessage = (evt: sendFormType): string => {
   evt.preventDefault();
